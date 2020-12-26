@@ -277,6 +277,19 @@ export class Runner {
       pushOutput(`Saving files to temp directory...`);
       const dir = await fileManager.saveToTemp(options, ...transforms);
       pushOutput(`Saved files to ${dir}`);
+
+      const fse = require('fs-extra');
+      const srcDir = `basthon_assets`;
+      const destDir = `${dir}/assets`;
+
+      fse.copy(srcDir, destDir, function (err) {
+        if (err) {
+          pushOutput(`Error: ${err}`);
+        } else {
+          pushOutput(`Copied basthon assets...`);
+        }
+      });
+      
       return dir;
     } catch (error) {
       pushError('Failed to save files.', error);
