@@ -73,7 +73,7 @@ var Basthon = (function() {
                 path: that.basthonRoot + "/IPython-0.0.1-py3-none-any.whl",
             },
             "p5": {
-                path: that.basthonRoot + "/p5-0.0.1-py3-none-any.whl",
+                path: "https://github.com/p5thon/fiddle/raw/p5test/basthon_assets/js/basthon-kernel/p5-0.0.1-py3-none-any.whl",
                 deps: ["pkg_resources"],
             },
         };
