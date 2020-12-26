@@ -36,7 +36,7 @@ window.editor = (function () {
         } else if( (typeof(localStorage) !== "undefined") && "py_src" in localStorage) {
             that.setValue(localStorage.py_src);
         } else {
-            that.setValue('for i in range(10):\n\tprint(i)');
+            // that.setValue('for i in range(10):\n\tprint(i)');
         }
         
         that.scrollToRow(0);
