@@ -8,6 +8,7 @@ import {
   MAIN_JS_NAME,
   PACKAGE_NAME,
   RENDERER_JS_NAME,
+  PYWIN_NAME,
 } from '../shared-constants';
 import { ipcMainManager } from './ipc';
 
@@ -73,6 +74,7 @@ async function ensureSaveTargetEmpty(filePath: string): Promise<boolean> {
     path.join(filePath, RENDERER_JS_NAME),
     path.join(filePath, MAIN_JS_NAME),
     path.join(filePath, PACKAGE_NAME),
+    path.join(filePath, PYWIN_NAME),
   ];
 
   let noFilesOrOverwriteGranted = true;

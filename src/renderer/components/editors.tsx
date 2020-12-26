@@ -44,6 +44,7 @@ export const TITLE_MAP: Record<MosaicId, string> = {
   html: 'HTML (index.html)',
   css: 'Stylesheet (styles.css)',
   docsDemo: 'Docs & Demos',
+  pywin: 'Python Process (main.py)',
 };
 
 export interface EditorsProps {
@@ -99,6 +100,7 @@ export class Editors extends React.Component<EditorsProps, EditorsState> {
           main: await getContent(EditorId.main, version),
           renderer: await getContent(EditorId.renderer, version),
           html: await getContent(EditorId.html, version),
+          pywin: await getContent(EditorId.pywin, version),
         },
         {},
       );

@@ -7,6 +7,7 @@ import {
   PRELOAD_JS_NAME,
   RENDERER_JS_NAME,
   STYLES_CSS_NAME,
+  PYWIN_NAME,
 } from '../shared-constants';
 import { getOctokit } from '../utils/octokit';
 import { sortedElectronMap } from '../utils/sorted-electron-map';
@@ -121,6 +122,16 @@ export class RemoteLoader {
             );
 
             break;
+            case PYWIN_NAME:
+              loaders.push(
+                fetch(child.download_url)
+                  .then((r) => r.text())
+                  .then((t) => {
+                    values.pywin = t;
+                  }),
+              );
+
+              break;
 
           case PRELOAD_JS_NAME:
             loaders.push(
@@ -191,6 +202,7 @@ export class RemoteLoader {
           renderer: this.getContentOrEmpty(gist, RENDERER_JS_NAME),
           preload: this.getContentOrEmpty(gist, PRELOAD_JS_NAME),
           css: this.getContentOrEmpty(gist, STYLES_CSS_NAME),
+          pywin: this.getContentOrEmpty(gist, PYWIN_NAME),
         },
         gistId,
       );

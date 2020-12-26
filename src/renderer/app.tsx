@@ -80,6 +80,7 @@ export class App {
         'html',
         'preload',
         'css',
+        'pywin',
       ];
 
       return order.indexOf(a) - order.indexOf(b);
@@ -166,6 +167,7 @@ export class App {
       main: getEditorValue(EditorId.main),
       preload: getEditorValue(EditorId.preload),
       renderer: getEditorValue(EditorId.renderer),
+      pywin: getEditorValue(EditorId.pywin),
     };
 
     if (options && options.include !== false) {

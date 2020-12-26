@@ -10,6 +10,7 @@ import {
   PRELOAD_JS_NAME,
   RENDERER_JS_NAME,
   STYLES_CSS_NAME,
+  PYWIN_NAME,
 } from '../shared-constants';
 import { DEFAULT_OPTIONS, PackageJsonOptions } from '../utils/get-package';
 import { fancyImport } from '../utils/import';
@@ -81,6 +82,7 @@ export class FileManager {
       renderer: await this.readFile(path.join(filePath, RENDERER_JS_NAME)),
       preload: await this.readFile(path.join(filePath, PRELOAD_JS_NAME)),
       css: await this.readFile(path.join(filePath, STYLES_CSS_NAME)),
+      pywin: await this.readFile(path.join(filePath, PYWIN_NAME)),
     };
 
     window.ElectronFiddle.app.replaceFiddle(editorValues, { filePath });
@@ -150,6 +152,7 @@ export class FileManager {
     output.set(PRELOAD_JS_NAME, values.preload);
     output.set(STYLES_CSS_NAME, values.css);
     output.set(PACKAGE_NAME, values.package!);
+    output.set(PYWIN_NAME, values.pywin);
 
     for (const transform of transforms) {
       try {

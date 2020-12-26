@@ -129,6 +129,7 @@ describe('Editors component', () => {
         renderer: 'renderer-value',
         preload: '',
         css: '',
+        pywin: 'pywin-value',
       };
 
       app
@@ -153,6 +154,7 @@ describe('Editors component', () => {
         html: 'html-value',
         preload: '',
         css: '/* Empty */',
+        pywin: 'pywin-value',
       };
 
       app
@@ -176,6 +178,7 @@ describe('Editors component', () => {
         html: 'html-value',
         renderer: 'renderer-value',
         main: 'main-value',
+        pywin: 'pywin-value',
       };
       app
         .replaceFiddle(editorValues, {
@@ -200,6 +203,7 @@ describe('Editors component', () => {
         html: 'html-value',
         main: 'main-value',
         renderer: 'renderer-value',
+        pywin: 'pywin-value',
       };
 
       expect(app.state.localPath).toBe('/fake/path');
@@ -225,6 +229,7 @@ describe('Editors component', () => {
         html: 'html-value',
         main: 'main-value',
         renderer: 'renderer-value',
+        pywin: 'pywin-value',
       };
 
       app
@@ -282,6 +287,7 @@ describe('Editors component', () => {
           html: 'html-value',
           main: 'main-value',
           renderer: 'renderer-value',
+          pywin: 'pywin-value',
         };
 
         app
@@ -314,6 +320,7 @@ describe('Editors component', () => {
         html: 'html-value',
         main: 'main-value',
         renderer: 'renderer-value',
+        pywin: 'pywin-value',
       });
 
       expect(
@@ -325,6 +332,9 @@ describe('Editors component', () => {
       expect(
         (window as any).ElectronFiddle.editors.renderer.setValue,
       ).toHaveBeenCalledWith('renderer-value');
+      expect(
+        (window as any).ElectronFiddle.editors.pywin.setValue,
+      ).toHaveBeenCalledWith('pywin-value');
     });
 
     it('attempts to set values for closed editors', () => {
@@ -344,6 +354,7 @@ describe('Editors component', () => {
         renderer: 'renderer-value',
         preload: 'preload-value',
         css: 'css-value',
+        pywin: 'pywin-value',
       });
 
       expect(

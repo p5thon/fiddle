@@ -74,7 +74,7 @@ export async function getIsPackageManagerInstalled(
  * Finds npm modules in editor values, returning an array of modules.
  */
 export async function findModulesInEditors(values: EditorValues) {
-  const files = [values.main, values.renderer, values.preload];
+  const files = [values.main, values.renderer, values.preload, values.pywin];
   const modules: Array<string> = [];
 
   for (const file of files) {

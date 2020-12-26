@@ -15,10 +15,12 @@ export const CONFIG_PATH = path.join(
 
 export const DEFAULT_MOSAIC_ARRANGEMENT: MosaicNode<MosaicId> = {
   direction: 'row',
-  first: EditorId.main,
+  //first: EditorId.main,
+  first: EditorId.pywin,
   second: {
     direction: 'column',
-    first: EditorId.renderer,
+    //first: EditorId.renderer,
+    first: EditorId.main,
     second: EditorId.html,
   },
 };

@@ -38,6 +38,7 @@ export interface Version {
 export interface EditorValues {
   main: string;
   renderer: string;
+  pywin: string;
   html: string;
   preload: string;
   css: string;
@@ -93,6 +94,7 @@ export const enum EditorId {
   'html' = 'html',
   'preload' = 'preload',
   'css' = 'css',
+  'pywin' = 'pywin',
 }
 
 // Panels that can show up as a mosaic
@@ -108,6 +110,7 @@ export const ALL_EDITORS = [
   EditorId.preload,
   EditorId.html,
   EditorId.css,
+  EditorId.pywin,
 ];
 export const ALL_PANELS = [PanelId.docsDemo];
 export const ALL_MOSAICS = [...ALL_EDITORS, ...ALL_PANELS];
