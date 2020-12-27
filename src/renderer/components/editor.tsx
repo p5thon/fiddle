@@ -39,6 +39,9 @@ export class Editor extends React.Component<EditorProps> {
       case 'css':
         this.language = 'css';
         break;
+      case 'pywin':
+        this.language = 'python';
+        break;
       default:
         this.language = 'javascript';
     }
