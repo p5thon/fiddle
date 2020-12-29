@@ -220,6 +220,9 @@ export class Runner {
     const binaryPath = getElectronBinaryPath(version, localPath);
     console.log(`Runner: Binary ${binaryPath} ready, launching`);
 
+    // Always pass through renderer process console to the IDE
+    this.appState.isEnablingElectronLogging = true;
+
     const env = { ...process.env };
     if (this.appState.isEnablingElectronLogging) {
       env.ELECTRON_ENABLE_LOGGING = 'true';
@@ -289,7 +292,7 @@ export class Runner {
           pushOutput(`Copied basthon assets...`);
         }
       });
-      
+
       return dir;
     } catch (error) {
       pushError('Failed to save files.', error);
