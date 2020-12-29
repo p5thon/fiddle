@@ -239,7 +239,7 @@ export class Runner {
 
     this.child = spawn(binaryPath, options, { cwd: dir, env });
     this.appState.isRunning = true;
-    pushOutput(`Electron v${version} started.`);
+    //pushOutput(`Electron v${version} started.`);
 
     this.child.stdout!.on('data', (data) =>
       pushOutput(data, { bypassBuffer: false }),
@@ -251,7 +251,7 @@ export class Runner {
       const withCode =
         typeof code === 'number' ? ` with code ${code.toString()}.` : `.`;
 
-      pushOutput(`Electron exited${withCode}`);
+      //pushOutput(`Electron exited${withCode}`);
       this.appState.isRunning = false;
       this.child = null;
 
@@ -277,9 +277,9 @@ export class Runner {
     const { pushOutput, pushError } = this.appState;
 
     try {
-      pushOutput(`Saving files to temp directory...`);
+      //pushOutput(`Saving files to temp directory...`);
       const dir = await fileManager.saveToTemp(options, ...transforms);
-      pushOutput(`Saved files to ${dir}`);
+      //pushOutput(`Saved files to ${dir}`);
 
       const fse = require('fs-extra');
       const srcDir = `basthon_assets`;
@@ -289,7 +289,7 @@ export class Runner {
         if (err) {
           pushOutput(`Error: ${err}`);
         } else {
-          pushOutput(`Copied basthon assets...`);
+          //pushOutput(`Copied basthon assets...`);
         }
       });
 

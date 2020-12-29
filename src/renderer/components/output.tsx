@@ -80,6 +80,7 @@ export class Output extends React.Component<CommandsProps> {
    * @memberof Output
    */
   public renderEntry(entry: OutputEntry, index: number): Array<JSX.Element> {
+    // XXX: console messages could be filtered/decorated here
     const ts = this.renderTimestamp(entry.timestamp);
     const timestamp = <span className="timestamp">{ts}</span>;
     const lines = entry.text.split(/\r?\n/);
